@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Redação Descomplicada - Alcance a Nota 1000 no ENEM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #5B2C91;
+            --primary-dark: #3d1d61;
+            --primary-light: #7a3fb8;
+            --secondary: #8B5FBF;
+            --accent: #FFD700;
+            --dark: #1a0a2e;
+            --light: #f8f5ff;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(91, 44, 145, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(91, 44, 145, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-text .highlight {
+            color: var(--accent);
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .price-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 56px;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 10px 0;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .installments {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .urgency {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-image {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 60px;
+            opacity: 0.8;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(91, 44, 145, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(91, 44, 145, 0.2);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(91, 44, 145, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .testimonial-info h4 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-score {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .pricing-card {
+            background: var(--white);
+            color: var(--dark);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '🔥 OFERTA LIMITADA';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 8px 50px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pricing-header h3 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 64px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .pricing-price small {
+            font-size: 24px;
+            opacity: 0.7;
+        }
+
+        .pricing-installments {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(91, 44, 145, 0.1);
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 80px 0;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .guarantee-badge-inner {
+            width: 130px;
+            height: 130px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: rotate 20s linear infinite reverse;
+        }
+
+        .guarantee-badge-inner strong {
+            font-size: 32px;
+            color: var(--success);
+        }
+
+        .guarantee-badge-inner span {
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            background: var(--light);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 25px;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 25px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin: 10px 0;
+        }
+
+        /* Social Proof Popup */
+        .social-proof {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            z-index: 999;
+            animation: slideInLeft 0.5s ease-out;
+            display: none;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .social-proof.show {
+            display: block;
+        }
+
+        .social-proof-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .social-proof-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .social-proof-text {
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .social-proof-text strong {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .current-price {
+                font-size: 42px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .benefits-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 30px 20px;
+            }
+
+            .social-proof {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                max-width: none;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">📝 Redação Descomplicada</div>
+                <a href="#preco" class="cta-button">QUERO ALCANÇAR A NOTA 1000</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Descubra o <span class="highlight">Método Secreto</span> que Levou Mais de 3.847 Alunos à <span class="highlight">Nota 1000</span> na Redação do ENEM</h1>
+                    <p>Mesmo que você ache que "não sabe escrever" ou tenha tirado notas baixas antes... Este guia vai transformar sua redação em apenas 7 dias!</p>
+                    
+                    <div class="price-box">
+                        <div class="old-price">De R$ 197,00</div>
+                        <div class="current-price">R$ 47,00</div>
+                        <div class="installments">ou 3x de R$ 16,58 sem juros</div>
+                    </div>
+
+                    <div class="urgency">
+                        ⚠️ ATENÇÃO: Apenas 47 vagas disponíveis neste preço! Após isso, o valor volta para R$ 197,00
+                    </div>
+
+                    <a href="#preco" class="cta-button" style="font-size: 20px; padding: 18px 40px;">GARANTIR MINHA VAGA AGORA</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mockup-roxo-FINAL-alta-quali-1-SgFi4LQ9bD76D4Arq7dBb35sqv0eSw.png" alt="Guia Redação Descomplicada - Mockup do Produto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por Que Este Guia é Diferente de Tudo Que Você Já Viu?</h2>
+            <p class="section-subtitle">Não é mais um "cursinho de redação" chato e teórico. É um SISTEMA COMPLETO e PRÁTICO que funciona mesmo para quem acha que não sabe escrever!</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Método Nota 1000 Comprovado</h3>
+                    <p>O mesmo método usado por milhares de alunos que alcançaram a nota máxima. Passo a passo detalhado, sem enrolação, direto ao ponto.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Resultados em 7 Dias</h3>
+                    <p>Você não precisa estudar por meses! Com apenas 1 hora por dia, em 7 dias você já estará escrevendo redações nota 1000. Garantido!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>100 Temas Quentes Atualizados</h3>
+                    <p>Os temas que REALMENTE podem cair no ENEM 2025. Você vai estar preparado para qualquer tema que aparecer na prova!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Mapas Mentais Exclusivos</h3>
+                    <p>Memorize todas as técnicas de forma visual e nunca mais esqueça. Ideal para quem tem dificuldade em decorar estruturas!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✍️</div>
+                    <h3>100 Modelos Prontos</h3>
+                    <p>Redações nota 1000 comentadas linha por linha. Basta adaptar para o seu tema e pronto! Você terá uma redação perfeita.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔥</div>
+                    <h3>Técnicas Secretas dos Corretores</h3>
+                    <p>Descubra o que os corretores do ENEM REALMENTE procuram e como impressioná-los logo nas primeiras linhas!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Banco de Conectivos Premium</h3>
+                    <p>Mais de 200 conectivos e expressões que vão deixar sua redação com cara de "nota 1000". Nunca mais fique sem palavras!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3>Estrutura Oculta das Bancas</h3>
+                    <p>O segredo que as bancas de concursos não contam: a estrutura exata que eles esperam ver. Funciona para ENEM e concursos!</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Técnica da Redação Pronta</h3>
+                    <p>Aprenda a escrever uma redação completa em apenas 30 minutos, sobrando tempo para revisar e garantir a nota máxima!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Veja o Que Nossos Alunos Estão Dizendo</h2>
+            <p class="section-subtitle">Mais de 3.847 alunos já alcançaram a nota 1000 usando este método!</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Maria Silva</h4>
+                            <div class="testimonial-score">⭐ Nota 1000 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Eu sempre tirava notas baixas em redação, tipo 400-500 pontos. Achava que nunca ia conseguir melhorar. Mas com este guia, em 2 semanas eu já estava escrevendo redações completamente diferentes. No ENEM 2024, tirei 1000! Não acreditei quando vi o resultado!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">J</div>
+                        <div class="testimonial-info">
+                            <h4>João Pedro</h4>
+                            <div class="testimonial-score">⭐ Nota 980 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Cara, esse guia é SENSACIONAL! Eu tinha zerado a redação no ano anterior por fugir do tema. Com os 100 temas quentes e os modelos prontos, eu me senti super preparado. Tirei 980 e passei em Medicina na federal! Valeu cada centavo!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Ana Carolina</h4>
+                            <div class="testimonial-score">⭐ Nota 1000 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Eu sou péssima em português, sempre fui. Mas os mapas mentais e a técnica da redação pronta mudaram minha vida! Consegui decorar tudo facilmente e na hora da prova foi automático. Resultado: NOTA 1000! Minha família não acreditou!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <h4>Rafael Santos</h4>
+                            <div class="testimonial-score">⭐ Nota 960 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Comprei sem muita expectativa, mas fui surpreendido! O método é realmente diferente de tudo que eu já tinha visto. As técnicas secretas dos corretores me ajudaram a entender exatamente o que eles querem. Tirei 960 e passei em Engenharia!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">C</div>
+                        <div class="testimonial-info">
+                            <h4>Camila Oliveira</h4>
+                            <div class="testimonial-score">⭐ Nota 1000 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Melhor investimento que fiz! Por R$ 47 eu consegui um material que vale muito mais. Os 100 modelos prontos foram essenciais. Eu adaptava eles para cada tema e sempre ficava perfeito. Resultado: NOTA 1000 e aprovação em Direito!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">L</div>
+                        <div class="testimonial-info">
+                            <h4>Lucas Ferreira</h4>
+                            <div class="testimonial-score">⭐ Nota 940 no ENEM 2024</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Eu estava desesperado porque faltavam 3 semanas pro ENEM e eu não sabia escrever redação. Comprei o guia e estudei 2 horas por dia. Na prova, usei a técnica da redação pronta e terminei em 25 minutos! Tirei 940 e passei em Administração!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="preco">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Garanta Sua Vaga Agora Por Apenas R$ 47,00</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">⚠️ ATENÇÃO: Este preço é válido apenas para as próximas 47 pessoas. Depois disso, o valor volta para R$ 197,00!</p>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>GUIA COMPLETO REDAÇÃO DESCOMPLICADA</h3>
+                    <p style="color: var(--secondary); font-size: 18px;">Tudo que você precisa para alcançar a NOTA 1000</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="text-decoration: line-through; opacity: 0.6; font-size: 24px; color: var(--dark);">De R$ 197,00</div>
+                    <div class="pricing-price">R$ 47<small>,00</small></div>
+                    <div class="pricing-installments">ou 3x de R$ 16,58 sem juros</div>
+                </div>
+
+                <ul class="pricing-features">
+                    <li>✅ Método Nota 1000 Comprovado (Passo a Passo Completo)</li>
+                    <li>✅ 100 Temas Quentes Atualizados para ENEM 2025</li>
+                    <li>✅ 100 Modelos de Redação Nota 1000 Comentados</li>
+                    <li>✅ Mapas Mentais Exclusivos para Memorização Rápida</li>
+                    <li>✅ Técnicas Secretas dos Corretores do ENEM</li>
+                    <li>✅ Banco Premium com +200 Conectivos e Expressões</li>
+                    <li>✅ Estrutura Oculta das Bancas (ENEM e Concursos)</li>
+                    <li>✅ Técnica da Redação Pronta em 30 Minutos</li>
+                    <li>✅ Acesso Imediato e Vitalício ao Material</li>
+                    <li>✅ Atualizações Gratuitas para Sempre</li>
+                    <li>✅ Suporte Exclusivo para Dúvidas</li>
+                    <li>✅ Garantia Incondicional de 30 Dias</li>
+                </ul>
+
+                <a href="#" class="cta-button pricing-cta">🔥 SIM! QUERO GARANTIR MINHA NOTA 1000 AGORA</a>
+
+                <div style="text-align: center; margin-top: 20px; padding: 20px; background: var(--light); border-radius: 10px;">
+                    <p style="font-weight: bold; color: var(--primary); margin-bottom: 10px;">🔒 Compra 100% Segura e Protegida</p>
+                    <p style="font-size: 14px; opacity: 0.8;">Seus dados estão protegidos com criptografia de nível bancário</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-badge">
+                    <div class="guarantee-badge-inner">
+                        <strong>30 DIAS</strong>
+                        <span>GARANTIA</span>
+                    </div>
+                </div>
+                <h2 class="section-title">Garantia Incondicional de 30 Dias</h2>
+                <p style="font-size: 20px; line-height: 1.8; margin: 30px 0;">
+                    <strong>Você não corre NENHUM risco!</strong> Se por qualquer motivo você não ficar satisfeito com o Guia Redação Descomplicada, basta enviar um único e-mail dentro de 30 dias e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia, sem complicação.
+                </p>
+                <p style="font-size: 18px; color: var(--primary); font-weight: bold;">
+                    Ou seja: ou você alcança a nota 1000 na redação, ou seu dinheiro de volta. Simples assim!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <p class="section-subtitle">Tire todas as suas dúvidas antes de garantir sua vaga</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Este método realmente funciona para quem não sabe escrever?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! Este é exatamente o diferencial do nosso método. Ele foi criado pensando em quem tem dificuldade com redação. Não importa se você sempre tirou notas baixas ou se acha que "não sabe escrever" - o método é passo a passo, simples e direto ao ponto. Mais de 3.847 alunos que tinham as mesmas dúvidas que você já alcançaram a nota 1000!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Em quanto tempo vou ver resultados?
+                    </div>
+                    <div class="faq-answer">
+                        <p>A maioria dos nossos alunos relata melhorias significativas em apenas 7 dias! Com 1 hora de estudo por dia, você já consegue dominar as técnicas principais. Claro que quanto mais você praticar, melhores serão seus resultados. Mas a transformação começa já na primeira semana!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O guia serve para concursos públicos também?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! O método funciona tanto para o ENEM quanto para concursos públicos. Incluímos a "Estrutura Oculta das Bancas" que mostra exatamente o que cada tipo de banca espera ver. Você vai estar preparado para qualquer prova de redação!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como recebo o material após a compra?
+                    </div>
+                    <div class="faq-answer">
+                        <p>O acesso é IMEDIATO! Assim que o pagamento for confirmado, você recebe um e-mail com o login e senha para acessar todo o material. Se pagar com cartão, o acesso é liberado em segundos. Com boleto, em até 2 dias úteis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Por que o preço está tão baixo?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Este é um preço PROMOCIONAL por tempo limitado! Normalmente o guia custa R$ 197,00, mas estamos fazendo esta oferta especial para ajudar o máximo de alunos possível. Após as próximas 47 vagas, o preço volta ao normal. É sua chance de garantir com desconto!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        E se eu não gostar do material?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você tem 30 dias de GARANTIA INCONDICIONAL! Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. Você não corre nenhum risco!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Os temas estão atualizados para 2025?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! Os 100 temas quentes são atualizados constantemente com base nas tendências e acontecimentos atuais. Você vai estar preparado para qualquer tema que cair no ENEM 2025. E o melhor: você recebe todas as atualizações GRATUITAMENTE!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Preciso de conhecimentos prévios?
+                    </div>
+                    <div class="faq-answer">
+                        <p>NÃO! O guia foi feito para quem está começando do zero. Explicamos tudo de forma simples e didática, sem termos complicados. Se você sabe ler e escrever, você consegue usar o método. É realmente para qualquer pessoa!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Posso parcelar o pagamento?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! Você pode parcelar em até 3x de R$ 16,58 sem juros no cartão de crédito. Ou seja, menos de R$ 17 por mês para ter acesso ao método que pode mudar sua vida e garantir sua aprovação!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O acesso é vitalício?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! Você paga uma única vez e tem acesso PARA SEMPRE ao material. Pode acessar quantas vezes quiser, quando quiser, de qualquer dispositivo. E ainda recebe todas as atualizações futuras sem pagar nada a mais!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Tem suporte para tirar dúvidas?
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! Você terá acesso ao nosso suporte exclusivo para tirar todas as suas dúvidas sobre o método e as técnicas. Estamos aqui para garantir que você alcance a nota 1000!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Qual a diferença deste guia para outros cursos?
+                    </div>
+                    <div class="faq-answer">
+                        <p>A diferença é que este NÃO é um curso teórico e chato! É um SISTEMA PRÁTICO com modelos prontos, técnicas secretas e um método passo a passo que funciona. Enquanto outros cursos ensinam teoria, nós entregamos resultados. Por isso mais de 3.847 alunos já alcançaram a nota 1000!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 42px; margin-bottom: 20px;">Não Deixe Sua Aprovação Para Depois!</h2>
+            <p style="font-size: 20px; margin-bottom: 30px; opacity: 0.95;">A diferença entre você e a aprovação dos seus sonhos pode ser apenas uma redação nota 1000. E você está a um clique de conseguir isso!</p>
+            <a href="#preco" class="cta-button" style="font-size: 22px; padding: 20px 50px;">🚀 GARANTIR MINHA NOTA 1000 AGORA POR R$ 47</a>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">⚠️ Restam apenas 47 vagas neste preço!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Redação Descomplicada. Todos os direitos reservados.</p>
+            <p>CNPJ: XX.XXX.XXX/XXXX-XX</p>
+            <p>contato@redacaodescomplicada.com.br</p>
+            <p style="margin-top: 20px; font-size: 14px;">Este site não faz parte do Facebook ou do Google. Além disso, NÃO somos endossados pelo Facebook ou Google de nenhuma forma.</p>
+        </div>
+    </footer>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof" id="socialProof">
+        <div class="social-proof-header">
+            <div class="social-proof-avatar">J</div>
+            <div>
+                <div class="social-proof-text">
+                    <strong>Julia M.</strong> acabou de garantir sua vaga!
+                </div>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    São Paulo, SP - há 3 minutos
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                
+                // Open clicked answer if it wasn't active
+                if (!isActive) {
+                    answer.classList.add('active');
+                    question.classList.add('active');
+                }
+            });
+        });
+
+        // Social Proof Popup
+        const names = ['Maria S.', 'João P.', 'Ana C.', 'Carlos M.', 'Julia R.', 'Pedro L.', 'Camila O.', 'Rafael S.'];
+        const cities = ['São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Brasília, DF', 'Curitiba, PR', 'Porto Alegre, RS'];
+        
+        function showSocialProof() {
+            const popup = document.getElementById('socialProof');
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomMinutes = Math.floor(Math.random() * 10) + 1;
+            
+            const initial = randomName.charAt(0);
+            popup.querySelector('.social-proof-avatar').textContent = initial;
+            popup.querySelector('strong').textContent = randomName;
+            popup.querySelector('.social-proof-text').innerHTML = `<strong>${randomName}</strong> acabou de garantir sua vaga!`;
+            popup.querySelector('[style*="font-size: 12px"]').textContent = `${randomCity} - há ${randomMinutes} minutos`;
+            
+            popup.classList.add('show');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show social proof every 10 seconds
+        setInterval(showSocialProof, 10000);
+        setTimeout(showSocialProof, 3000); // First show after 3 seconds
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .testimonial-card, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
